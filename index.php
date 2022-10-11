@@ -10,17 +10,17 @@ $rota = explode("/", $rota);
 if($rota[0] === "api"){
     array_shift($rota);
     if(!file_exists("App\controller\\".ucfirst($rota[0]. "Controller.php"))){
-        echo "<hr>";
-        echo "indisponivel";
+        //echo "<hr>";
+        //echo "indisponivel";
         
     }
     else{
         $servico = "App\controller\\".ucfirst($rota[0]."Controller");
-        echo $servico;
+        //echo $servico;
         array_shift($rota);
         $HTTP = strtolower($_SERVER["REQUEST_METHOD"]);
-        echo "<hr>";
-        echo $HTTP;
+        //echo "<hr>";
+        //echo $HTTP;
         try{
             $resposta = call_user_func_array(array(new $servico, $HTTP), $rota);
             echo json_encode(array('status'=>'sucesso', 'data'=>$resposta),JSON_UNESCAPED_UNICODE);
