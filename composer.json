@@ -1,0 +1,10 @@
+{
+    "name": "sn00102067/projeto_exo_api",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "description": "projeto api",
+    "require": {}
+}
